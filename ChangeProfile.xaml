@@ -1,0 +1,51 @@
+﻿<Window x:Class="Library.ChangeProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="Изменить данные" Height="500" Width="700" ResizeMode="NoResize">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Фамилия: " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Medium"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Имя: " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Medium"/>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Отчество: " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Medium"/>
+        <TextBlock Grid.Column="1" Grid.Row="9" Text="Должность: " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Medium"/>
+        <TextBlock Grid.Column="1" Grid.Row="7" Text="Номер телефона: " HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Medium"/>
+        <Button x:Name="AcceptBtn" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Content="Принять"  FontSize="20" FontWeight="Medium" Background="LightGreen" Click="AcceptBtn_Click"/>
+        <Button x:Name="CancelBtn"  Grid.Row="11" Grid.Column="3" Content="Отменить"  FontSize="20" FontWeight="Medium" Background="Coral" Click="CancelBtn_Click"/>
+        <TextBox x:Name="SurnameStr" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" MaxLength="50" FontSize="15"/>
+        <TextBox x:Name="NameStr" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" MaxLength="50" FontSize="15"/>
+        <TextBox x:Name="PatronymicStr" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" MaxLength="50" FontSize="15"/>
+        <ComboBox x:Name="JobStr" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontSize="15" IsReadOnly="True">
+            <TextBlock Text="Администратор"/>
+            <TextBlock Text="Библиотекарь"/>
+        </ComboBox>
+
+        <TextBox x:Name="NumStr" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" MaxLength="11" FontSize="15" TextChanged="NumStr_TextChanged"/>
+        <TextBlock x:Name="MessageBox" Grid.Row="16" Grid.Column="1"  Text="" Grid.ColumnSpan="3" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" TextWrapping="Wrap" TextAlignment="Center"/>
+        
+    </Grid>
+</Window>

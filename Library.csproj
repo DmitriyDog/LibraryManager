@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MainWindow.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="MainWindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="31.0.4" />
+    <PackageReference Include="Npgsql" Version="8.0.2" />
+  </ItemGroup>
+
+</Project>
