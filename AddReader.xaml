@@ -1,0 +1,43 @@
+﻿<Window x:Class="Library.AddReader"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="Новый читатель" Height="350" Width="500" MinHeight="350" MinWidth="500">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="152*"/>
+            <ColumnDefinition Width="61*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Фамилия: " FontSize="17" FontWeight="Regular" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBox x:Name="SurnameReaderStr" Grid.Row="1" Grid.Column="2" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5"/>
+        <TextBlock Text="Имя: " FontSize="17" FontWeight="Regular" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBox x:Name="NameReaderStr" Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5"/>
+        <TextBlock Text="Отчество: " FontSize="17" FontWeight="Regular" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"/>
+        <TextBox x:Name="PatronymicReaderStr" Grid.Row="3" Grid.Column="2" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5"/>
+        <TextBlock Text="Номер телефона: " FontSize="17" FontWeight="Regular" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" TextWrapping="Wrap"/>
+        <TextBox x:Name="NumStr" Grid.Row="4" Grid.Column="2" VerticalContentAlignment="Center" MaxLength="11" FontSize="17" TextChanged="NumStr_TextChanged" Margin="0,5,0,5"/>
+        <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="198*"/>
+                <ColumnDefinition Width="139*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AcceptBtn" Background="LightGreen" Grid.Column="0" Content="Принять" FontSize="17" FontWeight="medium" Click="AcceptBtn_Click" Margin="10"/>
+            <Button x:Name="CancelBtn" Background="Coral" Grid.Column="1" Content="Отменить" FontSize="17" FontWeight="medium" Click="CancelBtn_Click" Margin="10"/>
+        </Grid>
+        <TextBlock x:Name="ErrorMessage" Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="2" TextAlignment="Center" FontSize="15" TextWrapping="Wrap" Foreground="Red"/>
+    </Grid>
+</Window>

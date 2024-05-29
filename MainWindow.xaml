@@ -1,0 +1,66 @@
+﻿<Window x:Class="Library.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="Library" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid x:Name="MainWin" Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"></RowDefinition>
+            <RowDefinition Height="368*"></RowDefinition>
+            <RowDefinition Height="33*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39"></ColumnDefinition>
+            <ColumnDefinition Width="426*"></ColumnDefinition>
+            <ColumnDefinition Width="297*"></ColumnDefinition>
+            <ColumnDefinition Width="39"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Таблица" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <DataGrid Grid.Row="1" Grid.Column="1" x:Name="Table"></DataGrid>
+        <Grid Grid.Column="1" x:Name="BookWin" Grid.ColumnSpan="2" Margin="425,33,0,0" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="109*"/>
+                <ColumnDefinition Width="188*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="Название:" FontSize="14" Height="19" FontWeight="Bold" Width="70"/>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="Автор:" FontSize="14" Height="19" FontWeight="Bold" Width="46"/>
+            <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="Издательство:" FontSize="12.5" Height="19" FontWeight="Bold" Width="90"/>
+            <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="Год издания:" FontSize="14" Height="25" FontWeight="Bold" Width="90"/>
+            <TextBlock Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="Количество книг:" FontSize="14" Height="41" FontWeight="Bold" Width="89" TextWrapping="Wrap"/>
+
+            <Button Grid.Row="5" Grid.Column="0" Background="LightGray" FontWeight="Bold" FontSize="18"
+                    x:Name="UpdateButton" Click="UpdBtn_Click" Margin="0,0,0,31">Обновить</Button>
+            <Button Grid.Row="5" Grid.Column="0" Background="Red" FontWeight="Bold" FontSize="18"
+                    x:Name="DeleteButton" Click="DelBtn_Click" Margin="0,30,0,0">Удалить</Button>
+            <Button Grid.Row="5" Grid.Column="1" Background="LightGreen" FontWeight="Bold" FontSize="20"
+                    x:Name="AddButton" Click="AddBtn_Click">Добавить книгу</Button>
+
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0,16,25,15" MaxLength="100" x:Name="TextName"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="0,16,25,16" MaxLength="60" x:Name="TextAuthor"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="0,15,25,15" MaxLength="30" x:Name="TextEdition"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Margin="0,16,25,15" MaxLength="4" x:Name="TextYear"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Margin="0,16,25,16" MaxLength="5" x:Name="TextNumber"/>
+        </Grid>
+        <DataGrid Grid.Row="1" Grid.Column="1" x:Name="DBTable" ItemsSource="{Binding}">
+            <DataGrid.Columns>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

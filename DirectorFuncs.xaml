@@ -1,0 +1,40 @@
+﻿<Window x:Class="Library.DirectorFuncs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="Профиль Администратора" ResizeMode="CanResize" MinHeight="450" MinWidth="800" Height="450" Width="800">
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="138*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="HelloBlock" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontSize="20" FontWeight="Medium"/>
+        <Button x:Name="CreateBtn" Click="CreateBtn_Click" Grid.Column="1" Grid.Row="2" Background="LightGreen" FontSize="20" FontWeight="Medium">Создать</Button>
+        <Button x:Name="ChangeBtn" Click="ChangeBtn_Click" Grid.Column="1" Grid.Row="4" Background="LightYellow" FontSize="20" FontWeight="Medium">Изменить данные</Button>
+        <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" Grid.Column="1" Grid.Row="8" Background="IndianRed" FontSize="20" FontWeight="Medium">Удалить</Button>
+        <Button x:Name="PasswordBtn" Click="PasswordBtn_Click" Grid.Column="1" Grid.Row="6" Background="LightCyan" FontSize="20" FontWeight="Medium">Изменить пароль</Button>
+        <Button x:Name="ExitBtn" Click="ExitBtn_Click" Grid.Column="4" Grid.Row="0" Background="Coral" FontSize="20" FontWeight="Medium">Выйти</Button>
+        <DataGrid x:Name="InfoTab" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="9" Margin="0,10,30,53" Loaded="InfoTab_Loaded" IsReadOnly="True" CanUserResizeColumns="False" CanUserResizeRows="False">
+            
+        </DataGrid>
+    </Grid>
+</Window>

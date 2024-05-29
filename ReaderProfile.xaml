@@ -1,0 +1,116 @@
+﻿<Window x:Class="Library.ReaderProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="Профиль читателя" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="29*"/>
+        <ColumnDefinition Width="228*"/>
+        <ColumnDefinition Width="38*"/>
+        <ColumnDefinition Width="203*"/>
+        <ColumnDefinition Width="100*"/>
+        <ColumnDefinition Width="100*"/>
+        <ColumnDefinition Width="100*"/>
+        <ColumnDefinition Width="24*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="30*"/>
+        <RowDefinition Height="43*"/>
+        <RowDefinition Height="277*"/>
+        <RowDefinition Height="18*"/>
+        <RowDefinition Height="39*"/>
+        <RowDefinition Height="30*"/>
+    </Grid.RowDefinitions>
+    
+    <ScrollViewer x:Name="BookParams" VerticalScrollBarVisibility="Hidden" Grid.Row="2" Grid.Column="1" Visibility="Visible">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Название: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="TitleStr" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5" TextChanged="TitleStr_TextChanged"/>
+                <TextBlock Text="Издательство: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="EditionStr" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5" TextChanged="EditionStr_TextChanged"/>
+            <TextBlock Text="Год издания: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox x:Name="YearStr" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="4" Margin="0,5,0,5" TextChanged="YearStr_TextChanged"/>
+            <TextBlock Text="Язык: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
+            <TextBox x:Name="LanguageStr" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5" TextChanged="LanguageStr_TextChanged"/>
+            <TextBlock Text="Количество: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"/>
+            <TextBox x:Name="NumberOfBooksStr" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5" TextChanged="NumberOfBooksStr_TextChanged"/>
+
+
+            <TextBlock Text="Автор" FontSize="19" FontWeight="Medium" TextAlignment="Center" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"/>
+            <TextBlock Text="Фамилия: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center"/>
+            <TextBox x:Name="SurnameStr" Grid.Row="6" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5" TextChanged="SurnameStr_TextChanged"/>
+            <TextBlock Text="Имя: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center"/>
+            <TextBox x:Name="NameStr" Grid.Row="7" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5" TextChanged="NameStr_TextChanged"/>
+                <Button x:Name="SearchBtn" Grid.Column="1" Grid.Row="8" Content="Поиск" FontSize="17" FontWeight="Medium" Click="SearchBtn_Click" Background="LightGreen"/>
+            </Grid>
+    </ScrollViewer>
+
+    <ScrollViewer x:Name="ReaderParams" VerticalScrollBarVisibility="Hidden" Grid.Row="2" Grid.Column="1" Visibility="Hidden">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="115"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Id: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="IdStr" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="9" Margin="0,5,0,5" Text="0" IsReadOnly="True"/>
+            <TextBlock Text="Фамилия: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"/>
+                <TextBox x:Name="SurnameReaderStr" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5" IsReadOnly="True"/>
+            <TextBlock Text="Имя: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
+                <TextBox x:Name="NameReaderStr" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5"  IsReadOnly="True"/>
+            <TextBlock Text="Отчество: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"/>
+                <TextBox x:Name="PatronymicReaderStr" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center" FontSize="17" MaxLength="30" Margin="0,5,0,5" IsReadOnly="True"/>
+            <TextBlock Text="Номер телефона: " FontSize="17" FontWeight="Regular" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                <TextBox x:Name="NumStr" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" MaxLength="11" FontSize="17" Margin="0,5,0,5" IsReadOnly="True"/>
+            </Grid>
+    </ScrollViewer>
+
+    <Grid Grid.Row="4" Grid.Column="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ChangeBtn" Grid.Column="0" Content="Изменить" Background="Bisque" FontSize="17" FontWeight="Medium" Click="ChangeBtn_Click"/>
+        <Button x:Name="BorrowBtn" Grid.Column="1" Content="Выдать" FontSize="17" FontWeight="Medium" Click="BorrowBtn_Click" Background="LightGreen"/>
+    </Grid>
+
+
+        <DataGrid x:Name="InfoTab" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="4" IsReadOnly="True" Loaded="InfoTab_Loaded" CanUserResizeColumns="False" CanUserResizeRows="False">
+            <DataGrid.ContextMenu>
+                <ContextMenu x:Name="changeStatus" Visibility="Collapsed">
+                    <MenuItem Header="Изменить статус долга" Click="changeStatus_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        <Button x:Name="BorrowPageBtn" Grid.Row="4" Grid.Column="5" Click="BorrowPageBtn_Click" Content="Долги"  FontSize="17" FontWeight="Medium" Background="White" Margin="3"/>
+    <Button x:Name="BooksBtn" Grid.Row="4" Grid.Column="6" Click="BooksBtn_Click" Content="Книги"  FontSize="17" FontWeight="Medium" Background="White" Margin="3"/>
+        <Button x:Name="ExitBtn" Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Background="Coral" Content="Назад" FontSize="17" FontWeight="Medium" Margin="0,0,0,43" Grid.RowSpan="2" Click="ExitBtn_Click"/>
+    </Grid>
+</Window>
